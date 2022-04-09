@@ -1,5 +1,5 @@
 import React from "react";
-import { Col, Row, Form } from "react-bootstrap";
+import { Col, Row, Form, Button } from "react-bootstrap";
 
 export const SearchForm = () => {
   return (
@@ -10,7 +10,9 @@ export const SearchForm = () => {
             <Form.Control placeholder="First name" />
           </Col>
           <Col>
-            <Form.Control placeholder="Last name" />
+            <Button variant="warning" type="submit">
+              Search
+            </Button>
           </Col>
         </Row>
       </Form>
