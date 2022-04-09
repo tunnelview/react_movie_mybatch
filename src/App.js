@@ -1,8 +1,9 @@
+import { Container, Row } from "react-bootstrap";
 import "./App.css";
-import { Container } from "react-bootstrap";
 import { Title } from "./components/title/Title";
 import { SearchForm } from "./components/search-form/SearchForm";
 import { CustomCard } from "./components/card/CustomCard";
+import { MovieList } from "./components/movie-list/MovieList";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <SearchForm />
         <CustomCard />
         <hr />
+        <MovieList />
       </Container>
     </div>
   );
