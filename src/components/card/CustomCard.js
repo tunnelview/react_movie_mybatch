@@ -1,13 +1,13 @@
 import React from "react";
 import { Card, Button } from "react-bootstrap";
 
-export const CustomCard = () => {
+export const CustomCard = ({ searchedMovie }) => {
   return (
     <Card style={{ width: "18rem" }} className="mt-5">
-      <Card.Img variant="top" src="holder.js/100px180" />
+      <Card.Img variant="top" src={searchedMovie.Poster} />
       <Card.Body>
-        <Card.Title>Card Title</Card.Title>
-        <Card.Title>Rating : 4.4</Card.Title>
+        <Card.Title>{searchedMovie.Title}</Card.Title>
+        <Card.Title>Rating : {searchedMovie.imdbRating}</Card.Title>
 
         <div className="d-flex.justify-content-around">
           <Button variant="info"> Be Happy</Button>
