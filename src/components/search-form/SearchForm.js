@@ -11,7 +11,8 @@ export const SearchForm = ({ getMovie }) => {
 
   const handleOnSubmit = (e) => {
     e.preventDefault();
-    console.log(search);
+    // console.log(search);
+    getMovie(search);
   };
 
   return (
