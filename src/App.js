@@ -11,11 +11,19 @@ function App() {
   // All the hooks have to be created at the top level, it can't be
   // written inside a function.
   const [searchedMovie, setSearchMovie] = useState({});
+  const [movieList, setMovieList] = useState([]);
+
   const getMovie = async (search) => {
     // console.log(search);
     const movie = await fetchMovie(search);
     setSearchMovie(movie.data);
     console.log(movie.data);
+  };
+
+  //// Create a function
+  const addToList = (type) => {
+    // const mv = { ...searchedMovie, category: type }; instead of this line #26
+    setMovieList([...movieList, { searchedMovie, category: type }]);
   };
 
   console.log(searchedMovie);
@@ -25,7 +33,7 @@ function App() {
       <Container>
         <Title />
         <SearchForm getMovie={getMovie} />
-        <CustomCard searchedMovie={searchedMovie} />
+        <CustomCard searchedMovie={searchedMovie} func={addToMovieList} />
         <hr />
         <MovieList />
       </Container>
