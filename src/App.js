@@ -7,9 +7,9 @@ import { MovieList } from "./components/movie-list/MovieList";
 import { fetchMovie } from "./components/helper/axiosHelper";
 
 function App() {
-  const getMovie = (search) => {
+  const getMovie = async (search) => {
     // console.log(search);
-    const movie = fetchMovie(search);
+    const movie = await fetchMovie(search);
     console.log(movie);
   };
 
