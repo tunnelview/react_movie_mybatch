@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Col, Row, Form, Button } from "react-bootstrap";
 
-export const SearchForm = () => {
+export const SearchForm = ({ getMovie }) => {
   const [search, setSearch] = useState("");
 
   const handleOnChange = (e) => {

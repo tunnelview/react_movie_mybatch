@@ -6,11 +6,15 @@ import { CustomCard } from "./components/card/CustomCard";
 import { MovieList } from "./components/movie-list/MovieList";
 
 function App() {
+  const getMovie = (search) => {
+    console.log(search);
+  };
+
   return (
     <div className="wrapper">
       <Container>
         <Title />
-        <SearchForm />
+        <SearchForm getMovie={getMovie} />
         <CustomCard />
         <hr />
         <MovieList />
