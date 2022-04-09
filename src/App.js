@@ -15,7 +15,6 @@ function App() {
     // console.log(search);
     const movie = await fetchMovie(search);
     setSearchMovie(movie.data);
-
     console.log(movie.data);
   };
 
