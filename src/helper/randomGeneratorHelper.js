@@ -1,3 +1,4 @@
+// Need to export inorder to be imported
 export const randomChar = () => {
   const chars = "QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm";
 
