@@ -1,14 +1,16 @@
 import React from "react";
 import { Button, ButtonGroup, Col, Row } from "react-bootstrap";
+import { CustomCard } from "../card/CustomCard";
 
-export const MovieList = () => {
+export const MovieList = ({ movieList }) => {
   return (
-    <div className="">
+    <div className="py-3">
       <Row>
-        <Col>All List is selected</Col>
+        All List is selected
+        {/* <Col>All List is selected</Col> don't need this */}
       </Row>
       <Row>
-        <Col className="d-flex justify-content-between">
+        <Col className="d-flex justify-content-between mt-3">
           <ButtonGroup>
             <Button variant="primary">All</Button>
             <Button variant="info">Happy</Button>
@@ -18,6 +20,14 @@ export const MovieList = () => {
             <Button variant="primary">Grid</Button>
             <Button variant="info">List</Button>
           </ButtonGroup>
+        </Col>
+      </Row>
+
+      <Row>
+        <Col>
+          {movieList.map((movie, i) => (
+            <CustomCard key={i} movieObj={movie} />
+          ))}
         </Col>
       </Row>
     </div>

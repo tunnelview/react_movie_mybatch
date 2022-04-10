@@ -23,7 +23,7 @@ function App() {
   //// Create a function
   const addToMovieList = (type) => {
     // const mv = { ...searchedMovie, category: type }; instead of this line #26
-    setMovieList([...movieList, { searchedMovie, category: type }]);
+    setMovieList([...movieList, { ...searchedMovie, category: type }]);
   };
 
   console.log(searchedMovie);
@@ -33,9 +33,9 @@ function App() {
       <Container>
         <Title />
         <SearchForm getMovie={getMovie} />
-        <CustomCard searchedMovie={searchedMovie} func={addToMovieList} />
+        <CustomCard movieObj={searchedMovie} func={addToMovieList} />
         <hr />
-        <MovieList />
+        <MovieList movieList={movieList} />
       </Container>
     </div>
   );
