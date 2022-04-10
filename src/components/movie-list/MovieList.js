@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Button, ButtonGroup, Col, Row } from "react-bootstrap";
 import { CustomCard } from "../card/CustomCard";
 
-export const MovieList = ({ movieList }) => {
+export const MovieList = ({ movieList, deleteMovie }) => {
   const [mood, setMood] = useState("");
 
   //filter first then display
@@ -36,7 +36,12 @@ export const MovieList = ({ movieList }) => {
       <Row>
         <Col className="d-flex flex-wrap ">
           {movieList.map((movie, i) => (
-            <CustomCard key={i} movieObj={movie} btnDelete={true} />
+            <CustomCard
+              key={i}
+              movieObj={movie}
+              btnDelete={true}
+              func={deleteMovie}
+            />
           ))}
         </Col>
       </Row>
