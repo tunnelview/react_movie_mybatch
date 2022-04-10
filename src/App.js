@@ -24,16 +24,19 @@ function App() {
   const addToMovieList = (type) => {
     // const mv = { ...searchedMovie, category: type }; instead of this line #26
     setMovieList([...movieList, { ...searchedMovie, category: type }]);
+    setSearchMovie({}); // setting the movielist empty, passing the empty object
   };
 
-  console.log(searchedMovie);
+  console.log(searchedMovie, movieList);
 
   return (
     <div className="wrapper">
       <Container>
         <Title />
         <SearchForm getMovie={getMovie} />
-        <CustomCard movieObj={searchedMovie} func={addToMovieList} />
+        {searchedMovie?.imdbID && (
+          <CustomCard movieObj={searchedMovie} func={addToMovieList} />
+        )}
         <hr />
         <MovieList movieList={movieList} />
       </Container>
