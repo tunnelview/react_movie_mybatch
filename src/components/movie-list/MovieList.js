@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { Button, ButtonGroup, Col, Row } from "react-bootstrap";
 import { CustomCard } from "../card/CustomCard";
+import { CustomList } from "../card/CustomList";
 
 export const MovieList = ({ movieList, deleteMovie }) => {
   const [mood, setMood] = useState("");
+  const [isGrid, setIsGrid] = useState(true);
 
   //filter first then display
   const filterMovies = mood
@@ -19,30 +21,44 @@ export const MovieList = ({ movieList, deleteMovie }) => {
             <Button variant="primary" onClick={() => setMood("")}>
               All
             </Button>
-            <Button variant="info" onClick={() => setMood("happy")}>
+            <Button variant="info" onClick={() => setIsGrid("happy")}>
               Happy
             </Button>
-            <Button variant="warning" onClick={() => setMood("lazy")}>
+            <Button variant="warning" onClick={() => setIsGrid("lazy")}>
               Lazy
             </Button>
           </ButtonGroup>
           <ButtonGroup>
-            <Button variant="primary">Grid</Button>
-            <Button variant="info">List</Button>
+            <Button variant="primary" onClick={() => setIsGrid(false)}>
+              Grid
+            </Button>
+            <Button variant="info" onClick={() => setIsGrid(false)}>
+              List
+            </Button>
           </ButtonGroup>
         </Col>
       </Row>
 
       <Row>
         <Col className="d-flex flex-wrap ">
-          {movieList.map((movie, i) => (
-            <CustomCard
-              key={i}
-              movieObj={movie}
-              btnDelete={true}
-              func={deleteMovie}
-            />
-          ))}
+          {filterMovies.map((movie, i) =>
+            isGrid ? (
+              <CustomList
+                key={i}
+                movieObj={movie}
+                btnDelete={true}
+                func={deleteMovie}
+              />
+            ) : (
+              <CustomList
+                key={i}
+                movieObj={movie}
+                btnDelete={true}
+                func={deleteMovie}
+              />
+            )
+          )}
+          ;
         </Col>
       </Row>
     </div>
