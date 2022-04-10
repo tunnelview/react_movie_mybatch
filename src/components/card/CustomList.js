@@ -1,19 +1,21 @@
 import React from "react";
 import { Card, Button } from "react-bootstrap";
-import {CustomList} from "../card/CustomList";
+// import {CustomList} from "../card/CustomList";
 
 export const CustomList = ({ movieObj, func, btnDelete = false }) => {
-  console.log(movieObj);
+  // console.log(movieObj);
   return (
     <Card style={{ width: "100%" }} className="mt-5 me-3 d-flex flex-row">
-      <Card.Img variant="top" src={movieObj.Poster} style={{width="350px"}} />
+      <Card.Img
+        variant="top"
+        src={movieObj.Poster}
+        style={{ width: "150px" }}
+      />
       <Card.Body>
         <Card.Title>{movieObj.Title}</Card.Title>
         <Card.Title>Rating : {movieObj.imdbRating}</Card.Title>
 
-        <p>
-          {movieObj.Plot}
-        </p>
+        <p>{movieObj.Plot}</p>
         {/* should be list */}
         {btnDelete ? (
           <div className="d-grid gap-2">
