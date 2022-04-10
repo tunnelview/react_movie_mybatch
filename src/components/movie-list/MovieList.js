@@ -1,8 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button, ButtonGroup, Col, Row } from "react-bootstrap";
 import { CustomCard } from "../card/CustomCard";
 
 export const MovieList = ({ movieList }) => {
+  const [mood, setMood] = useState("");
+
+  //filter first then display
+  const filterMovies = mood
+    ? movieList.filter((movie) => movie.cat === mood)
+    : movieList;
+
   return (
     <div className="py-3">
       <Row>
@@ -12,9 +19,15 @@ export const MovieList = ({ movieList }) => {
       <Row>
         <Col className="d-flex justify-content-between mt-3">
           <ButtonGroup>
-            <Button variant="primary">All</Button>
-            <Button variant="info">Happy</Button>
-            <Button variant="warning">Lazy</Button>
+            <Button variant="primary" onClick={() => setMood("")}>
+              All
+            </Button>
+            <Button variant="info" onClick={() => setMood("happy")}>
+              Happy
+            </Button>
+            <Button variant="warning" onClick={() => setMood("lazy")}>
+              Lazy
+            </Button>
           </ButtonGroup>
           <ButtonGroup>
             <Button variant="primary">Grid</Button>
