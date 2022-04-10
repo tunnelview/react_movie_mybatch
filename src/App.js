@@ -19,7 +19,7 @@ function App() {
     const char = randomChar();
     getMovie(char);
     console.log;
-  });
+  }, []);
 
   const getMovie = async (search) => {
     // console.log(search);
