@@ -4,7 +4,7 @@ import { Card, Button } from "react-bootstrap";
 export const CustomCard = ({ movieObj, func }) => {
   console.log(movieObj);
   return (
-    <Card style={{ width: "18rem" }} className="mt-5">
+    <Card style={{ width: "18rem" }} className="mt-5 me-3">
       <Card.Img variant="top" src={movieObj.Poster} />
       <Card.Body>
         <Card.Title>{movieObj.Title}</Card.Title>
