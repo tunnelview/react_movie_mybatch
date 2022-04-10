@@ -50,6 +50,7 @@ export const MovieList = ({ movieList, deleteMovie }) => {
                 func={deleteMovie}
               />
             ) : (
+              // in line 52 : is else, the whole <Row> block is used as a ternary operator
               <CustomList
                 key={i}
                 movieObj={movie}
