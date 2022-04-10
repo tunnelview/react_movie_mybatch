@@ -20,6 +20,12 @@ export const CustomCard = ({ movieObj, func }) => {
             Lazy Bee{" "}
           </Button>
         </div>
+
+        <div className="d-grid gap-2">
+          <Button variant="danger" size="lg">
+            Delete
+          </Button>
+        </div>
       </Card.Body>
     </Card>
   );

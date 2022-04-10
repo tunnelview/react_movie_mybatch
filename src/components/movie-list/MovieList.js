@@ -7,15 +7,12 @@ export const MovieList = ({ movieList }) => {
 
   //filter first then display
   const filterMovies = mood
-    ? movieList.filter((movie) => movie.cat === mood)
+    ? movieList.filter((movie) => movie.category === mood)
     : movieList;
 
   return (
     <div className="py-3">
-      <Row>
-        All List is selected
-        {/* <Col>All List is selected</Col> don't need this */}
-      </Row>
+      <Row>{mood.toUpperCase || "All"} is selected</Row>
       <Row>
         <Col className="d-flex justify-content-between mt-3">
           <ButtonGroup>
