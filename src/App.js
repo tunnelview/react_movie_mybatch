@@ -6,6 +6,7 @@ import { CustomCard } from "./components/card/CustomCard";
 import { MovieList } from "./components/movie-list/MovieList";
 import { fetchMovie } from "./helper/axiosHelper";
 import { useState, useEffect } from "react";
+import { randomChar } from "./helper/randomGeneratorHelper";
 
 function App() {
   // All the hooks have to be created at the top level, it can't be
@@ -18,7 +19,6 @@ function App() {
     // create random character
     const char = randomChar();
     getMovie(char);
-    console.log;
   }, []);
 
   const getMovie = async (search) => {

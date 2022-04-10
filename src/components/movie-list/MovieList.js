@@ -21,10 +21,10 @@ export const MovieList = ({ movieList, deleteMovie }) => {
             <Button variant="primary" onClick={() => setMood("")}>
               All
             </Button>
-            <Button variant="info" onClick={() => setIsGrid("happy")}>
+            <Button variant="info" onClick={() => setMood("happy")}>
               Happy
             </Button>
-            <Button variant="warning" onClick={() => setIsGrid("lazy")}>
+            <Button variant="warning" onClick={() => setMood("lazy")}>
               Lazy
             </Button>
           </ButtonGroup>
