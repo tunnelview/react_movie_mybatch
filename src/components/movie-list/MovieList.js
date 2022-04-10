@@ -34,9 +34,9 @@ export const MovieList = ({ movieList }) => {
       </Row>
 
       <Row>
-        <Col className="d-flex flex-wrap justify-content-around">
+        <Col className="d-flex flex-wrap ">
           {movieList.map((movie, i) => (
-            <CustomCard key={i} movieObj={movie} />
+            <CustomCard key={i} movieObj={movie} btnDelete={true} />
           ))}
         </Col>
       </Row>
