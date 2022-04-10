@@ -21,8 +21,15 @@ function App() {
   };
 
   /// Create a function to delete movie from list
-  const deleteMovie = (i) => {
-    alert(i);
+  const deleteMovie = (imdbID) => {
+    if (window.confirm("Are you sure you want to delete this movie?")) {
+      // alert(imdbID);
+
+      const filteredMovieList = movieList.filter(
+        (movie) => movie.imdb !== imdbID
+      );
+      setMovieList(filteredMovieList);
+    }
   };
 
   //// Create a function
