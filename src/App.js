@@ -26,7 +26,7 @@ function App() {
       // alert(imdbID);
 
       const filteredMovieList = movieList.filter(
-        (movie) => movie.imdb !== imdbID
+        (movie) => movie.imdbID !== imdbID
       );
       setMovieList(filteredMovieList);
     }
